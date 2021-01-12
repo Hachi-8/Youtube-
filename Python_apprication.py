@@ -1,5 +1,5 @@
 from flask import Flask,request
-
+import youtube_scraping
 
 app = Flask(__name__)
     
@@ -9,15 +9,15 @@ app = Flask(__name__)
 def index():
     return """
         <html><body>
-        <form action = "/hello" method ="GET">
-          名前:<input type ="text" name="name">
-          <input type ="submit" value="送信">
+        <form action = "/search" method ="GET">
+          検索:<input type ="text" name="name">
+          <input type ="submit" value="検索">
         </form>
         </body></html>
     """
 
-@app.route("/hello")
-def hello():
+@app.route("/search")
+def search():
     name=request.args.get("name")
     if name is None:
         name="名無し"
