@@ -1,6 +1,9 @@
 from flask import Flask,request
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    return app
+
 #ルーティングの指定　---
 @app.route("/")
 def index():
