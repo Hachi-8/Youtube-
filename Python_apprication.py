@@ -23,9 +23,13 @@ def search():
     #if name is None:
     #    name="名無し"
     return """
-    <h1>{0}さん、こんにちは！</h1>
-        <p>{1}</p>
-    """.format(name,search_result)
+    <h1>{0}の検索結果</h1>
+        <p>
+        for sr in search_result.get("items", []):
+            print(sr['snippet']['title'])
+            print(sr['snippet']['publishedAt'])
+        </p>
+    """.format(name)
 
 
 #実行
