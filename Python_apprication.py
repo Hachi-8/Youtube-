@@ -1,5 +1,5 @@
 from flask import Flask,request
-import youtube_scraping
+from youtube_scraping import youtube_search
 
 app = Flask(__name__)
     
@@ -19,11 +19,13 @@ def index():
 @app.route("/search")
 def search():
     name=request.args.get("name")
-    if name is None:
-        name="名無し"
+    search_result=youtube_search(name)
+    #if name is None:
+    #    name="名無し"
     return """
     <h1>{0}さん、こんにちは！</h1>
-    """.format(name)
+        <p>{1}</p>
+    """.format(name,search_result)
 
 
 #実行
