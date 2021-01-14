@@ -27,7 +27,7 @@ def search():
         return """
         <h1>{0}の検索結果</h1>
             <p>{1}</p>
-        """.format(name,search_result_title)
+        """.format(name,search_result)
 
 
 #実行
