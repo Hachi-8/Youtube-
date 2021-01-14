@@ -18,8 +18,6 @@ def index():
 
 @app.route("/search")
 def search():
-    if name==None:
-        return redirect("/")
     name=request.args.get("name")
     search_result=youtube_search(name)
     #search_result_title=picking_title(search_result)
