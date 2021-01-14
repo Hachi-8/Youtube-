@@ -1,4 +1,4 @@
-from flask import Flask,request
+from flask import Flask,request,redirect
 from youtube_scraping import youtube_search,picking_title
 
 app = Flask(__name__)
@@ -25,10 +25,11 @@ def search():
     search_result_title=picking_title(search_result)
     if name==None:
         return redirect("/")
-    return """
-    <h1>{0}の検索結果</h1>
-        <p>{1}</p>
-    """.format(name,search_result_title)
+    else:
+        return """
+        <h1>{0}の検索結果</h1>
+            <p>{1}</p>
+        """.format(name,search_result_title)
 
 
 #実行
