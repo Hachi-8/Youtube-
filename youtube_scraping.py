@@ -22,7 +22,7 @@ def youtube_search(word):
     #視聴回数が多い順に取得
     order='viewCount',
     type='video',
-    maxResult=1,
+    maxResults=1,
     ).execute()
 
     return json.dumps(search_response,indent=2,ensure_ascii=False)
