@@ -24,3 +24,9 @@ def youtube_search(name):
     ).execute()
 
     return search_response
+
+def picking_title(arg):
+    title=[]
+    for item in arg.get("items",[]):
+        title.append(item["spippet"]["title"])
+    return title

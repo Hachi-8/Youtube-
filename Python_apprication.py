@@ -1,5 +1,5 @@
 from flask import Flask,request
-from youtube_scraping import youtube_search
+from youtube_scraping import youtube_search,picking_title
 
 app = Flask(__name__)
     
@@ -18,18 +18,17 @@ def index():
 
 @app.route("/search")
 def search():
+    if name==None:
+        return redirect("/")
     name=request.args.get("name")
     search_result=youtube_search(name)
-    #if name is None:
-    #    name="名無し"
+    search_result_title=picking_title(search_result)
+    if name==None:
+        return redirect("/")
     return """
     <h1>{0}の検索結果</h1>
-        <p>
-        for sr in search_result.get("items", []):
-            print(sr['snippet']['title'])
-            print(sr['snippet']['publishedAt'])
-        </p>
-    """.format(name)
+        <p>{1}</p>
+    """.format(name,search_result_title)
 
 
 #実行
