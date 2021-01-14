@@ -24,7 +24,7 @@ def youtube_search(name):
     type='video',
     ).execute()
 
-    return search_response
+    return json.dumps(search_response)
 
 def picking_title(arg):
     title=[]
