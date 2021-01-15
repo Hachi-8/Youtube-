@@ -29,6 +29,7 @@ def youtube_search(word):
 
 def picking_title(arg):
     title=[]
-    for item in arg.get("items",[]):
-        title.append(item[0]["spippet"]["title"])
+
+    for item in arg.get("items"):
+        title.append(item)
     return title
