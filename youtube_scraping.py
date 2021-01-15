@@ -30,6 +30,6 @@ def youtube_search(word):
 def picking_title(arg):
     title=[]
 
-    for item in arg.get("items"):
+    for item in arg.json().get("items"):
         title.append(item)
     return title
