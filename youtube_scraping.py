@@ -25,10 +25,10 @@ def youtube_search(word):
     maxResults=1,
     ).execute()
 
-    return json.dumps(search_response["items"],indent=2,ensure_ascii=False)
+    return json.dumps(search_response["items"][0]["spippet"]["title"],indent=2,ensure_ascii=False)
 
 def picking_title(arg):
     title=[]
     for item in arg.get("items",[]):
-        title.append(item["spippet"]["title"])
+        title.append(item[0]["spippet"]["title"])
     return title
