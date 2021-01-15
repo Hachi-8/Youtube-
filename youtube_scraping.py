@@ -25,7 +25,7 @@ def youtube_search(word):
     maxResults=1,
     ).execute()
 
-    return json.dumps(search_response["items"][0]["snippet"],indent=2,ensure_ascii=False)
+    return json.dumps(search_response["items"][0]["snippet"]["title"],indent=2,ensure_ascii=False)
 
 def picking_title(arg):
     title=[]
