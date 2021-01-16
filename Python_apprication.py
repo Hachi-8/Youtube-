@@ -20,14 +20,16 @@ def index():
 def search():
     name=request.args.get("name")
     search_result=youtube_search(name)
-    search_result_title=picking_title(search_result)
+    #search_result_title=picking_title(search_result)
     if name==None:
         return redirect("/")
     else:
+        for item in search_result["items"]:
+            print(item["snippet"]["title"])
         return """
         <h1>{0}の検索結果</h1>
             <p>{1}</p>
-        """.format(name,search_result_title)
+        """.format(name,search_result)
 
 
 #実行
