@@ -22,14 +22,13 @@ def youtube_search(word):
     #視聴回数が多い順に取得
     order='viewCount',
     type='video',
-    maxResults=1,
+    maxResults=2,
     ).execute()
 
     return search_response
 
 def picking_title(arg):
     title=[]
-
-    for item in arg:
-        title.append(item.snippet.title)
+    for item in arg["items"]:
+        title.append(item["snippet"]["title"])
     return title
