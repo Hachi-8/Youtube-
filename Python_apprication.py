@@ -20,7 +20,7 @@ def index():
 def search():
     name=request.args.get("name")
     search_result=youtube_search(name)
-    #search_result_title=picking_title(search_result)
+    search_result_titles=picking_title(search_result)
     if name==None:
         return redirect("/")
     else:
@@ -31,7 +31,8 @@ def search():
         <h1>{0}の検索結果</h1>
             <p>{1}</p>
             <p>{2}</p>
-        """.format(name,search_result,titles)
+            <p>{3}</p>
+        """.format(name,search_result,titles,search_result_titles)
 
 
 #実行
