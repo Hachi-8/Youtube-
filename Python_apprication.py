@@ -24,13 +24,14 @@ def search():
     if name==None:
         return redirect("/")
     else:
-        #for item in search_result["items"]:
-        #    print(item["snippet"]["title"])
+        titles=[]
+        for item in search_result["items"]:
+            titles.append(item["snippet"]["title"])
         return """
         <h1>{0}の検索結果</h1>
             <p>{1}</p>
             <p>{2}</p>
-        """.format(name,search_result,type(search_result))
+        """.format(name,search_result,titles)
 
 
 #実行

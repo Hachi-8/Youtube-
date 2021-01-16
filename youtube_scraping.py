@@ -25,7 +25,7 @@ def youtube_search(word):
     maxResults=1,
     ).execute()
 
-    return json.dumps(search_response,indent=2,ensure_ascii=False)
+    return search_response
 
 def picking_title(arg):
     title=[]
