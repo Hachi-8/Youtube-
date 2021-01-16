@@ -25,7 +25,7 @@ def search():
         return redirect("/")
     else:
         for item in search_result["items"]:
-            print(item["snippet"]["title"])
+            print(item[0]["snippet"]["title"])
         return """
         <h1>{0}の検索結果</h1>
             <p>{1}</p>
