@@ -24,12 +24,12 @@ def search():
     if name==None:
         return redirect("/")
     else:
-        titles=[]
-        for item in search_result["items"]:
-            titles.append(item["snippet"]["title"])
+        #titles=[]
+        #for item in search_result["items"]:
+        #    titles.append(item["snippet"]["title"])
         return render_template(
             "search_result.html",
-            titles=titles,
+            titles=search_result_titles,
             name=name
         )
         #return """
@@ -42,4 +42,4 @@ def search():
 
 #実行
 if __name__=="__main__":
-    app.run(host="127.0.0.1")
+    app.run(host="127.0.0.1",debug=True)

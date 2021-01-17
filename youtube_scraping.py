@@ -16,13 +16,13 @@ def youtube_search(word):
         )
 
     search_response = youtube.search().list(
-    part='snippet',
+    part='snippet,statistics',
     #検索したいワードの指定
     q=word,
     #視聴回数が多い順に取得
     order='viewCount',
     type='video',
-    maxResults=2,
+    maxResults=20,
     ).execute()
 
     return search_response
@@ -32,3 +32,9 @@ def picking_title(arg):
     for item in arg["items"]:
         titles.append(item["snippet"]["title"])
     return titles
+
+def picking_viewcount(arg):
+    viewcounts=[]
+    for item in arg["statistics"]:
+        viewcounts.append(item["viewcount"])
+    return viewcounts
