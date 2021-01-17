@@ -1,0 +1,13 @@
+{% extends 'portal.html' %}
+
+{% block title %}
+{{name}}の検索結果
+{% endblock %}
+
+{% block contents%}
+    {% for title in titles %}
+        <div class="title">
+            <p>{{title}}</p> 
+        </div>
+    {% endfor %}
+{% endblock %}

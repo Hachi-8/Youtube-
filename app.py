@@ -1,4 +1,4 @@
-from flask import Flask,request,redirect
+from flask import Flask,request,redirect,render_template
 from youtube_scraping import youtube_search,picking_title
 
 app = Flask(__name__)
@@ -27,12 +27,17 @@ def search():
         titles=[]
         for item in search_result["items"]:
             titles.append(item["snippet"]["title"])
-        return """
-        <h1>{0}の検索結果</h1>
-            <p>{1}</p>
-            <p>{2}</p>
-            <p>{3}</p>
-        """.format(name,search_result,titles,search_result_titles)
+        return render_template(
+            "search_result.html",
+            titles=titles,
+            name=name
+        )
+        #return """
+        #<h1>{0}の検索結果</h1>
+        #    <p>{1}</p>
+        #    <p>{2}</p>
+        #    <p>{3}</p>
+        #""".format(name,search_result,titles,search_result_titles)
 
 
 #実行
