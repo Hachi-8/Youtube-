@@ -16,7 +16,7 @@ def youtube_search(word):
         )
 
     search_response = youtube.search().list(
-    part='snippet,statistics',
+    part='snippet',
     #検索したいワードの指定
     q=word,
     #視聴回数が多い順に取得
