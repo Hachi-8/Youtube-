@@ -31,7 +31,7 @@ def search():
         return render_template(
             "search_result.html",
             titles=search_result_titles,
-            name=name
+            name=name,
             ids=search_result_ids
         )
         #return """
