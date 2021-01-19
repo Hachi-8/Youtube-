@@ -38,3 +38,9 @@ def picking_viewcount(arg):
     for item in arg["statistics"]:
         viewcounts.append(item["viewcount"])
     return viewcounts
+
+def picking_ids(arg):
+    ids=[]
+    for item in arg["items"]:
+        ids.append(item["id"]["videoId"])
+    return ids

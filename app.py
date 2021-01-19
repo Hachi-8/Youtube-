@@ -1,12 +1,12 @@
 from flask import Flask,request,redirect,render_template
-from youtube_scraping import youtube_search,picking_title
+from youtube_scraping import youtube_search,picking_title,picking_ids
 
 app = Flask(__name__)
     
 
 #ルーティングの指定　---
 @app.route("/")
-def index():
+def index(): 
     return """
         <html><body>
         <form action = "/search" method ="GET">
@@ -21,6 +21,7 @@ def search():
     name=request.args.get("name")
     search_result=youtube_search(name)
     search_result_titles=picking_title(search_result)
+    search_result_ids=picking_ids(search_result)
     if name==None:
         return redirect("/")
     else:
@@ -31,6 +32,7 @@ def search():
             "search_result.html",
             titles=search_result_titles,
             name=name
+            ids=search_result_ids
         )
         #return """
         #<h1>{0}の検索結果</h1>

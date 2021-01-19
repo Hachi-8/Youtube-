@@ -11,3 +11,9 @@
         </div>
     {% endfor %}
 {% endblock %}
+
+{% block ids %}
+        {% for id in ids %}
+            <a href="https://www.youtube.com/watch?v= {{id}} ">動画へ</a>
+        {% endfor %}
+{% endblock %}
