@@ -42,5 +42,5 @@ def picking_viewcount(arg):
 def picking_ids(arg):
     ids=[]
     for item in arg["items"]:
-        ids.append(item["id"]["videoId"])
+        ids.append("https://www.youtube.com/watch?v="+item["id"]["videoId"])
     return ids
