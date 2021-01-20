@@ -33,7 +33,7 @@ def search():
             "search_result.html",
             titles=search_result_titles,
             name=name,
-            ids=search_result_ids
+            ids=search_result_ids,
             len_titles=len_titles
         )
         #return """
