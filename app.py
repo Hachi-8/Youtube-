@@ -22,6 +22,7 @@ def search():
     search_result=youtube_search(name)
     search_result_titles=picking_title(search_result)
     search_result_ids=picking_ids(search_result)
+    len_titles=len(search_result_titles)
     if name==None:
         return redirect("/")
     else:
@@ -33,6 +34,7 @@ def search():
             titles=search_result_titles,
             name=name,
             ids=search_result_ids
+            len_titles=len_titles
         )
         #return """
         #<h1>{0}の検索結果</h1>
