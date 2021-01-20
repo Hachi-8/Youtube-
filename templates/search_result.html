@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block contents%}
-    {% for i in len(titles) %}
+    {% for i in range(len(titles)) %}
         <div class="title">
             <p>{{title[i]}}</p>
             <a href="{{ids[i]}}"></a> 
