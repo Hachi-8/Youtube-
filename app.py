@@ -34,7 +34,7 @@ def search():
             titles=search_result_titles,
             name=name,
             ids=search_result_ids,
-            len_titles=len_titles
+            range_len_titles=range(len_titles)
         )
         #return """
         #<h1>{0}の検索結果</h1>
