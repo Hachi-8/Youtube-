@@ -4,23 +4,15 @@
 {{name}}の検索結果
 {% endblock %}
 
-{% block contents%}
-    {% for i in range_len_titles %}
-        <div class="title">
-            <p>{{titles[i]}}</p>
-            <a href="https://www.youtube.com/watch?v={{ids[i]}}">動画へ</a> 
-        </div>
-    {% endfor %}
-{% endblock %}
 
-{% block imgs %}
+{% block contents %}
         {% for video in videos %}
             <div class="title">
                 <p>{{video["title"]}}</p>
                 <a href="https://www.youtube.com/watch?v={{video['id']}}">動画へ</a> 
             </div>
             <div class=imgbox>
-                <img class=thumbnail width="100%" height="20" src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
+                <img class=thumbnail width="100%" height="225" src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
             </div>
         {% endfor %}
 {% endblock %}
