@@ -43,7 +43,7 @@ def video_info(video_ids):
     results = requests.get(video_url, params=video_params)
     
     videos=[]
-    for result in results["items"]:
+    for result in results.json()["items"]:
         video_data = {
             "id" : results["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
