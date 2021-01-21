@@ -43,7 +43,7 @@ def video_info(video_ids):
         developerKey=YOUTUBE_API_KEY
         )
 
-    r = youtube.video().list(
+    r = youtube.videos().list(
     key = " YOUTUBE_API_KEY ",
     id = ",".join(video_ids),
     part = "snippet,contentDetails",
