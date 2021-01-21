@@ -9,10 +9,10 @@
         {% for video in videos %}
             <div class="title">
                 <p>{{video["title"]}}</p>
+                <div class=imgbox>
+                    <img class=thumbnail height="225" src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
+                </div>
                 <a href="https://www.youtube.com/watch?v={{video['id']}}">動画へ</a> 
-            </div>
-            <div class=imgbox>
-                <img class=thumbnail height="225" src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
             </div>
         {% endfor %}
 {% endblock %}
