@@ -15,9 +15,8 @@
 
 {% block imgs %}
         {% for video in videos %}
-            <div>
+            <div class=imgbox>
                 <img class=thumbnail src="{{video[thumnail]}}" alt="サムネイル">
-                <p>{{video[thumnail]}}</p>
             </div>
         {% endfor %}
 {% endblock %}
