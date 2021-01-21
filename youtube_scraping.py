@@ -31,9 +31,10 @@ def youtube_search(word):
 
 def video_info(video_ids):
     video_url = "https://www.googleapis.com/youtube/v3/videos"
+    YOUTUBE_API_KEY = 'AIzaSyBPme7scNi_jfFz5cK9rPoSrX68H5-2G5c'
 
     video_params = {
-        "key" : current_app.config[" YOUTUBE_API_KEY "],
+        "key" : " YOUTUBE_API_KEY ",
         "id" : ",".join(video_ids),
         "part" : "snippet,contentDetails",
         "maxrusult" : 20
