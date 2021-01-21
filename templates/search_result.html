@@ -8,13 +8,7 @@
     {% for i in range_len_titles %}
         <div class="title">
             <p>{{titles[i]}}</p>
-            <a href="{{ids[i]}}">動画へ</a> 
+            <a href="https://www.youtube.com/watch?v={{ids[i]}}">動画へ</a> 
         </div>
     {% endfor %}
-{% endblock %}
-
-{% block ids %}
-        {% for id in ids %}
-            <a href="{{id}}">動画へ</a>
-        {% endfor %}
 {% endblock %}

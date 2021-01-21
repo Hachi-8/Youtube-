@@ -1,6 +1,8 @@
 #pip install google-api-python-client
 
 from apiclient.discovery import build
+from flask import current_app
+import requests
 import pandas as pd
 import json
 
@@ -27,6 +29,30 @@ def youtube_search(word):
 
     return search_response
 
+def video_info(arg):
+    video_url = "https://www.googleapis.com/youtube/v3/videos"
+
+    video_params = {
+        "key" : current_app.config[" YOUTUBE_API_KEY "],
+        "id" : ",".join(video_ids),
+        "part" : "snippet,contentDetails",
+        "maxrusult" : 20
+    }
+    
+    r = requests.get(video_url, params=video_params)
+    results = r.json()["items"]
+    videos=[]
+    for result in results:
+        video_data = {
+            "id" : results["id"],
+            "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
+            "thumnail" : result["thumnails"]["high"]["url"],
+            "duration" : result["contentDetails"]["deration"],
+            "title" : result["snippet"]["title"]
+        } 
+        videos.append(video_data)
+    return videos
+
 def picking_title(arg):
     titles=[]
     for item in arg["items"]:
@@ -42,5 +68,5 @@ def picking_viewcount(arg):
 def picking_ids(arg):
     ids=[]
     for item in arg["items"]:
-        ids.append("https://www.youtube.com/watch?v="+item["id"]["videoId"])
+        ids.append(item["id"]["videoId"])
     return ids

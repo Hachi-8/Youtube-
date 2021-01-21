@@ -23,6 +23,8 @@ def search():
     search_result_titles=picking_title(search_result)
     search_result_ids=picking_ids(search_result)
     len_titles=len(search_result_titles)
+
+    
     if name==None:
         return redirect("/")
     else:
