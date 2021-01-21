@@ -40,10 +40,10 @@ def video_info(video_ids):
         "maxrusult" : 20
     }
     
-    r = requests.get(video_url, params=video_params)
-    results = r.json()["items"]
+    results = requests.get(video_url, params=video_params)
+    
     videos=[]
-    for result in results:
+    for result in results["items"]:
         video_data = {
             "id" : results["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
