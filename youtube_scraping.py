@@ -29,7 +29,7 @@ def youtube_search(word):
 
     return search_response
 
-def video_info(arg):
+def video_info(video_ids):
     video_url = "https://www.googleapis.com/youtube/v3/videos"
 
     video_params = {
@@ -47,7 +47,7 @@ def video_info(arg):
             "id" : results["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
             "thumnail" : result["thumnails"]["high"]["url"],
-            "duration" : result["contentDetails"]["deration"],
+            "duration" : result["contentDetails"]["duration"],
             "title" : result["snippet"]["title"]
         } 
         videos.append(video_data)

@@ -12,3 +12,11 @@
         </div>
     {% endfor %}
 {% endblock %}
+
+{% block imgs %}
+        {% for video in videos %}
+            <div>
+                <img src="{{video[thumnail]}}" alt="サムネイル">
+            </div>
+        {% endfor}
+{% endblock %}

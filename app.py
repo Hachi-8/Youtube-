@@ -1,5 +1,5 @@
 from flask import Flask,request,redirect,render_template
-from youtube_scraping import youtube_search,picking_title,picking_ids
+from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 
 app = Flask(__name__)
     
@@ -24,7 +24,7 @@ def search():
     search_result_ids=picking_ids(search_result)
     len_titles=len(search_result_titles)
 
-    
+    videos=video_info(search_result_ids)
     if name==None:
         return redirect("/")
     else:
@@ -36,7 +36,8 @@ def search():
             titles=search_result_titles,
             name=name,
             ids=search_result_ids,
-            range_len_titles=range(len_titles)
+            range_len_titles=range(len_titles),
+            videos=videos
         )
         #return """
         #<h1>{0}の検索結果</h1>
