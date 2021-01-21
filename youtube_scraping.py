@@ -64,7 +64,7 @@ def video_info(video_ids):
         video_data = {
             "id" : result["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
-            "thumnail" : result["thumnails"]["high"]["url"],
+            "thumnail" : result["snippet"]["thumnails"]["high"]["url"],
             "duration" : result["contentDetails"]["duration"],
             "title" : result["snippet"]["title"]
         } 
