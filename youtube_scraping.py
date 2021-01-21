@@ -48,7 +48,7 @@ def video_info(video_ids):
     id = ",".join(video_ids),
     part = "snippet,contentDetails",
     maxResults = 20    
-    )
+    ).execute()
 
     video_params = {
         "key" : " YOUTUBE_API_KEY ",
@@ -58,11 +58,11 @@ def video_info(video_ids):
     }
     
     #r = requests.get(video_url, params=video_params)
-    results = r.json()["items"]
+    
     videos=[]
-    for result in results:
+    for result in r["items"]:
         video_data = {
-            "id" : results["id"],
+            "id" : result["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
             "thumnail" : result["thumnails"]["high"]["url"],
             "duration" : result["contentDetails"]["duration"],
