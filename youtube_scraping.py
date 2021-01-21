@@ -47,14 +47,14 @@ def video_info(video_ids):
     key = " YOUTUBE_API_KEY ",
     id = ",".join(video_ids),
     part = "snippet,contentDetails",
-    maxrusult = 20    
+    maxResult = 20    
     )
 
     video_params = {
         "key" : " YOUTUBE_API_KEY ",
         "id" : ",".join(video_ids),
         "part" : "snippet,contentDetails",
-        "maxrusult" : 20
+        "maxResult" : 20
     }
     
     #r = requests.get(video_url, params=video_params)
