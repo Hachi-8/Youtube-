@@ -1,18 +1,20 @@
 {% extends 'portal.html' %}
 
 {% block title %}
-{{name}}の検索結果
+<div class="search_word">
+    {name}}の検索結果
+</div>
 {% endblock %}
 
 
 {% block contents %}
         {% for video in videos %}
-            <div class=content>        
+            <div class="content">        
                 <div class="title">
                     <p>{{video["title"]}}</p>
                     <a href="https://www.youtube.com/watch?v={{video['id']}}">動画へ</a> 
                 </div>
-                <div class=imgbox>
+                <div class="imgbox">
                     <img class=thumbnail height="225" src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
                 </div>
             </div>
