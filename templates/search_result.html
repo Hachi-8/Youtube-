@@ -8,7 +8,8 @@
 
 
 {% block contents %}
-        {% for video in videos %}
+    {% for video in videos %}
+        <div class content-container>
             <div class="content">        
                 <div class="title">
                     <p>{{video["title"]}}</p>
@@ -18,5 +19,6 @@
                     <img class=thumbnail src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
                 </div>
             </div>
-        {% endfor %}
+        </div>
+    {% endfor %}
 {% endblock %}
