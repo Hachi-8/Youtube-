@@ -16,7 +16,8 @@ def index():
         </style>
         <body>
         <form action = "/search" method ="GET">
-          検索:<input type ="text" name="name">
+          <p>Youtube Search</p>
+          <input type ="text" name="name">
           <input type ="submit" value="検索">
         </form>
         </body></html>
