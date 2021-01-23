@@ -8,7 +8,13 @@ app = Flask(__name__)
 @app.route("/")
 def index(): 
     return """
-        <html><body>
+        <html>
+        <style>
+           form{
+                text-align: center;
+           } 
+        </style>
+        <body>
         <form action = "/search" method ="GET">
           検索:<input type ="text" name="name">
           <input type ="submit" value="検索">
