@@ -15,15 +15,15 @@ def index():
            } 
            input.searchword{
                width:33%;
-               height:50px;
+               height:30px;
            }
            input.searchbtn{
-               height:50px;
+               height:30px;
            }
         </style>
         <body>
         <form action = "/search" method ="GET">
-          <p>Youtube Search</p>
+          <h1>Youtube Search</h1>
           <input class="searchword" type ="text" name="name">
           <input class="searchbtn" type ="submit" value="検索">
         </form>
