@@ -15,7 +15,7 @@ def index():
            } 
            input.searchword{
                width:24%;
-               height:30px;
+               height:25px;
            }
            input.searchbtn{
                height:30px;
