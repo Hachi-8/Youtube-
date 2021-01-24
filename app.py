@@ -13,8 +13,11 @@ def index():
            form{
                 text-align: center;
            } 
-           form.input{
+           input.searchword{
                width:33%;
+               height:50px;
+           }
+           input.searchbtn{
                height:50px;
            }
         </style>
