@@ -13,12 +13,16 @@ def index():
            form{
                 text-align: center;
            } 
+           form.input{
+               width:33%;
+               height:50px;
+           }
         </style>
         <body>
         <form action = "/search" method ="GET">
           <p>Youtube Search</p>
-          <input type ="text" name="name">
-          <input type ="submit" value="検索">
+          <input class="searchword" type ="text" name="name">
+          <input class="searchbtn" type ="submit" value="検索">
         </form>
         </body></html>
     """
