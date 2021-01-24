@@ -14,7 +14,7 @@ def index():
                 text-align: center;
            } 
            input.searchword{
-               width:33%;
+               width:24%;
                height:30px;
            }
            input.searchbtn{

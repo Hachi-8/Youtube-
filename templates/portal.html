@@ -43,9 +43,17 @@
             float: left;
 
         }
+        form{
+            text-align: center;
+        }
 </style>
 </head>
 <body>
+    <form action = "/search" method ="GET">
+        <h1>Youtube Search</h1>
+        <input class="searchword" type ="text" name="name">
+        <input class="searchbtn" type ="submit" value="検索">
+    </form>
     <h1>
         {% block title %}
         <!---タイトル--->>
