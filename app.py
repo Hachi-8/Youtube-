@@ -62,6 +62,7 @@ def search():
         #""".format(name,search_result,titles,search_result_titles)
 
 @app.route("/review")
+def review():
     return"""
         <html>
             <h1>review</h1>
