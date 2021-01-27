@@ -1,4 +1,5 @@
 from flask import Flask,request,redirect,render_template
+from werkzeug.utils import html
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 
 app = Flask(__name__)
@@ -60,6 +61,12 @@ def search():
         #    <p>{3}</p>
         #""".format(name,search_result,titles,search_result_titles)
 
+@app.route("/review")
+    return"""
+        <html>
+            <h1>review</h1>
+        </html>
+    """
 
 #実行
 if __name__=="__main__":
