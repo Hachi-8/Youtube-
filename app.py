@@ -43,9 +43,6 @@ def search():
     if name==None:
         return redirect("/")
     else:
-        #titles=[]
-        #for item in search_result["items"]:
-        #    titles.append(item["snippet"]["title"])
         return render_template(
             "search_result.html",
             titles=search_result_titles,
@@ -54,12 +51,6 @@ def search():
             range_len_titles=range(len_titles),
             videos=videos
         )
-        #return """
-        #<h1>{0}の検索結果</h1>
-        #    <p>{1}</p>
-        #    <p>{2}</p>
-        #    <p>{3}</p>
-        #""".format(name,search_result,titles,search_result_titles)
 
 @app.route("/review")
 def review():
