@@ -63,14 +63,15 @@ def search():
 
 @app.route("/review")
 def review():
-    id = request.form.get("id")
+    id = request.args.get("value")
     return"""
         <html>
             <h1>review</h1>
-            <p>id</p>
+            <p>{0}</p>
         </html>
-    """
+    """.format(id)
 
+#<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
 if __name__=="__main__":
     app.run(host="127.0.0.1",debug=True)
