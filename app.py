@@ -61,7 +61,7 @@ def review():
             <p>{0}</p>
         </html>
     """.format(id)
-
+#<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
 if __name__=="__main__":
