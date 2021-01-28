@@ -63,9 +63,11 @@ def search():
 
 @app.route("/review")
 def review():
+    id = request.form.get("id")
     return"""
         <html>
             <h1>review</h1>
+            <p>id</p>
         </html>
     """
 
