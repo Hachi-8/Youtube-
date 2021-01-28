@@ -54,7 +54,7 @@ def search():
 
 @app.route("/review")
 def review():
-    id = request.args.get("value")
+    id = request.args.get("name")
     return"""
         <html>
             <h1>review</h1>
