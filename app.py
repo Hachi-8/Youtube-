@@ -56,6 +56,7 @@ def search():
 
 @app.route("/thread")
 def thread():
+    title=request.form['value']
     thread_get = request.form["thread"]
     threads = Thread.query.all()
     #articles = Article.query.all()
@@ -68,9 +69,10 @@ def thread():
         thread = Thread.query.filter_by(threadname=thread_get).first()
         articles = Article.query.filter_by(thread_id=thread.id).all()
     return render_template(
-        "thread.html"
+        "thread.html",
         articles=articles,
-        thread=thread_get
+        thread=thread_get,
+        title=title
     )
 #<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
