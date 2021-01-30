@@ -17,9 +17,11 @@
                 </div>
                 
                 <img class=thumbnail src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
-                <form action="/review">
-                    <input type="hidden" name="{{video[id]}}" >
-                    <input class="detailbtn" type ="submit" value="評判・コメント">
+                <form action="/review" method="POST">
+                    
+                    <input class="detailbtn" type ="hidden" value="{{video['title']}}">
+
+                    <button type="submit">評判・コメント</button>
                 </form>
             </div>
 

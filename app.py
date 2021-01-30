@@ -1,6 +1,8 @@
 from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
+from datetime import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
+from thread import Article,Thread
 
 app = Flask(__name__)
     
@@ -52,15 +54,24 @@ def search():
             videos=videos
         )
 
-@app.route("/review")
-def review():
-    id = request.args.get("name")
-    return"""
-        <html>
-            <h1>review</h1>
-            <p>{0}</p>
-        </html>
-    """.format(id)
+@app.route("/thread")
+def thread():
+    thread_get = request.form["thread"]
+    threads = Thread.query.all()
+    #articles = Article.query.all()
+    thread_list = []
+    threads = Thread.query.all()
+    for th in threads:
+        thread_list.append(th.threadname)
+        #print("----" + th.threadname + "----")
+    if thread_get in thread_list:
+        thread = Thread.query.filter_by(threadname=thread_get).first()
+        articles = Article.query.filter_by(thread_id=thread.id).all()
+    return render_template(
+        "thread.html"
+        articles=articles,
+        thread=thread_get
+    )
 #<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
