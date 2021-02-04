@@ -1,4 +1,4 @@
-db = SQLAlchemy() 
+
 
 class Article(db.Model):
     #__tablename__ = "articles"

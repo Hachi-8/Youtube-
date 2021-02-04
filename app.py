@@ -2,7 +2,7 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 from datetime import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
-from thread import db,Article,Thread
+#from thread import db,Article,Thread
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -11,7 +11,7 @@ db_uri = "sqlite:///test.db"
 #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
 app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+db = SQLAlchemy()
 class Article(db.Model):
     #__tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
