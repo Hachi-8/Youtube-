@@ -1,9 +1,4 @@
-
-db_uri = "sqlite:///test.db"
-#or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
-app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy()
+from app import db
 
 class Article(db.Model):
     #__tablename__ = "articles"
