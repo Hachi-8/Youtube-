@@ -38,7 +38,7 @@ class Thread(db.Model):
     def __init__(self, threadname, articles=[]):
         self.threadname = threadname
         self.articles = articles
-
+db.create_all()
 
 #ルーティングの指定　---
 @app.route("/")
