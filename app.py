@@ -9,7 +9,7 @@ app = Flask(__name__)
 db_uri = "sqlite:///test.db"
 #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
 app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-db = SQLAlchemy(app)   
+db = SQLAlchemy()   
 
 class Article(db.Model):
     #__tablename__ = "articles"
