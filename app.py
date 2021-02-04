@@ -3,7 +3,7 @@ from werkzeug.utils import html
 from datetime import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from thread import Article,Thread
-
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
     
 
