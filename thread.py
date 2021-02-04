@@ -1,7 +1,8 @@
-from flask_sqlalchemy import SQLAlchemy
+from Flask import SQLAlchemy
 
-db_url = os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
-app.config["SQLALCHEMY_DATABASE_URI"] = db_url
+db_uri = "postgresql://localhost/flasknote"
+#or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
+app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
 db = SQLAlchemy(app)
 
 class Article(db.Model):
