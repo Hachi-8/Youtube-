@@ -5,7 +5,11 @@ from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from thread import Article,Thread
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
-    
+
+db_uri = "sqlite:///test.db"
+#or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
+app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+db = SQLAlchemy(app)    
 
 #ルーティングの指定　---
 @app.route("/")
