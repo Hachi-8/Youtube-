@@ -11,6 +11,7 @@ def create_app():
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    global db
     db = SQLAlchemy(app)
     return app
 
@@ -41,7 +42,7 @@ class Thread(db.Model):
     def __init__(self, threadname, articles=[]):
         self.threadname = threadname
         self.articles = articles
-        
+
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
