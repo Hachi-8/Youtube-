@@ -1,6 +1,6 @@
 from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
-from datetime import datetime
+import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from thread import init_db,Article,Thread
 from flask_sqlalchemy import SQLAlchemy
@@ -15,7 +15,7 @@ def create_app():
     return app
 
 class Article(db.Model):
-    #__tablename__ = "articles"
+    __tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     pub_date = db.Column(db.DateTime, nullable=False,
                                 default=datetime.utcnow)
@@ -32,7 +32,7 @@ class Article(db.Model):
 
 
 class Thread(db.Model):
-    #__tablename__ = "threads"
+    __tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)
     threadname = db.Column(db.String(80), unique=True)
     #threadname = db.Column(db.Text(80), unique=True)
