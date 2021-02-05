@@ -2,7 +2,7 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
-from thread import init_db
+from thread import init_db,db
 from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
