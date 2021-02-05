@@ -2,7 +2,7 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 from datetime import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
-#from thread import Article,Thread
+from thread import init_db,Article,Thread
 from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
@@ -11,8 +11,7 @@ def create_app():
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    global db
-    db = SQLAlchemy(app)
+    init_db(app)
     return app
 
 class Article(db.Model):
