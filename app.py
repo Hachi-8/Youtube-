@@ -6,12 +6,14 @@ from thread import init_db,db
 from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
+    global app
     app = Flask(__name__)
     db_uri = "sqlite:///test.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     init_db(app)
+    
     return app
 
 class Article(db.Model):
