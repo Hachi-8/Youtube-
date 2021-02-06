@@ -104,18 +104,24 @@ def thread():
     if thread_get in thread_list:
         thread = Thread.query.filter_by(threadname=thread_get).first()
         articles = Article.query.filter_by(thread_id=thread.id).all()
+        return render_template(
+            "thread.html",
+            articles=articles,
+            thread=thread_get,
+            title=title
+        )
+        
     else:
         thread_new = Thread(thread_get)
         db.session.add(thread_new)
         db.session.commit()
         articles = Article.query.filter_by(thread_id=thread_new.id).all()
-
-    return render_template(
-        "thread.html",
-        articles=articles,
-        thread=thread_get,
-        title=title
-    )
+        return render_template(
+            "thread.html",
+            articles=articles,
+            thread=thread_get,
+            title=title
+        )
 
 @app.route("/result", methods=["POST"])
 def result():
