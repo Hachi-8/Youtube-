@@ -44,7 +44,7 @@ class Thread(db.Model):
         self.threadname = threadname
         self.articles = articles
 
-create_app()
+
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
