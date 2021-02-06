@@ -95,7 +95,7 @@ def thread():
     title=request.form['value']
     thread_get = request.form["value"]
     threads = Thread.query.all()
-    #articles = Article.query.all()
+    articles = Article.query.all()
     thread_list = []
     threads = Thread.query.all()
     for th in threads:
