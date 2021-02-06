@@ -7,10 +7,10 @@ from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
     app = Flask(__name__)
+    init_db(app)
     db_uri = "sqlite:///thread.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-    init_db(app)
     return app
 
 class Article(db.Model):
@@ -106,8 +106,8 @@ def thread():
         articles = Article.query.filter_by(thread_id=thread.id).all()
         return render_template(
             "thread.html",
-            #articles=articles,
-            #thread=thread_get,
+            articles=articles,
+            thread=thread_get,
             title=title
         )
 
@@ -118,8 +118,8 @@ def thread():
         articles = Article.query.filter_by(thread_id=thread_new.id).all()
         return render_template(
             "thread.html",
-            #articles=articles,
-            #thread=thread_get,
+            articles=articles,
+            thread=thread_get,
             title=title
         )
 
