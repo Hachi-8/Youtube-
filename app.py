@@ -15,7 +15,7 @@ def create_app():
     return app
 
 class Article(db.Model):
-    __tablename__ = "articles"
+    #__tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     pub_date = db.Column(db.DateTime, nullable=False,
                                 default=datetime.utcnow())
@@ -32,7 +32,7 @@ class Article(db.Model):
 
 
 class Thread(db.Model):
-    __tablename__ = "threads"
+    #__tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)
     threadname = db.Column(db.String(80), unique=True)
     #threadname = db.Column(db.Text(80), unique=True)
@@ -90,17 +90,18 @@ def search():
             videos=videos
         )
 
-@app.route("/thread")
+@app.route("/thread", methods=["POST"])
 def thread():
     title=request.form['value']
     thread_get = request.form["value"]
     threads = Thread.query.all()
-    articles = Article.query.all()
+    #articles = Article.query.all()
     thread_list = []
     threads = Thread.query.all()
+
     for th in threads:
         thread_list.append(th.threadname)
-        #print("----" + th.threadname + "----")
+
     if thread_get in thread_list:
         thread = Thread.query.filter_by(threadname=thread_get).first()
         articles = Article.query.filter_by(thread_id=thread.id).all()
@@ -110,7 +111,7 @@ def thread():
             thread=thread_get,
             title=title
         )
-        
+
     else:
         thread_new = Thread(thread_get)
         db.session.add(thread_new)
