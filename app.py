@@ -89,7 +89,7 @@ def search():
             videos=videos
         )
 
-@app.route("/thread", methods=["POST"])
+@app.route("/thread", methods=["GET"])
 def thread():
     title=request.args.get('value')
     thread_get = request.args.get('value') #request.form["value"]
