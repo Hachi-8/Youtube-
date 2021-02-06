@@ -6,14 +6,12 @@ from thread import init_db,db
 from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
-    global app
     app = Flask(__name__)
     db_uri = "sqlite:///test.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     init_db(app)
-    
     return app
 
 class Article(db.Model):
@@ -94,7 +92,7 @@ def search():
 
 @app.route("/thread")
 def thread():
-    title=request.form['value']
+    title=request.args.get('value')
     thread_get = request.form["thread"]
     threads = Thread.query.all()
     #articles = Article.query.all()
@@ -112,6 +110,26 @@ def thread():
         thread=thread_get,
         title=title
     )
+
+@app.route("/result", methods=["POST"])
+def result():
+    date = datetime.now()
+    article = request.form["article"]
+    name = request.form["name"]
+    thread = request.form["thread"]
+    #print(article)
+    #print(name)
+    #print("------------------------------------------------------------")
+    #print(thread)
+    #print("------------------------------------------------------------")
+    thread = Thread.query.filter_by(threadname=thread).first()
+    #print(thread)
+    #print("------------------------------------------------------------")
+    admin = Article(pub_date=date, name=name, article=article, thread_id=thread.id)
+    db.session.add(admin)
+    db.session.commit()
+    return render_template("result.html", article=article, name=name, now=date)
+
 #<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
