@@ -10,7 +10,6 @@ def create_app():
     db_uri = "sqlite:///test.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     init_db(app)
     return app
 
@@ -147,4 +146,4 @@ def result():
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
 if __name__=="__main__":
-    app.run(host="127.0.0.1",debug=True)
+    app.run()
