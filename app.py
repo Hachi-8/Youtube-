@@ -11,10 +11,11 @@ def create_app():
     db_uri = "sqlite:///thread.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+    db.create_all()
     return app
 
 class Thread(db.Model):
-    __tablename__ = "thread"
+    __tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)
     threadname = db.Column(db.String(80), unique=True)
     articles = db.relationship('Article', backref='thread', lazy=True)
@@ -40,6 +41,7 @@ class Article(db.Model):
 
 
 app=create_app()
+
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
