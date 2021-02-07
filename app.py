@@ -11,7 +11,6 @@ def create_app():
     db_uri = "sqlite:///thread.db"
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
-    db.create_all()
     return app
 
 class Thread(db.Model):
