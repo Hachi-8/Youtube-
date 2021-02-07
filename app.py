@@ -12,9 +12,9 @@ def create_app():
     #or os.environ.get('DATABASE_URL') #or "postgresql://localhost/flasknote"
     app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
     return app
-    
+
 class Thread(db.Model):
-    __tablename__ = "threads"
+    __tablename__ = "thread"
     id = db.Column(db.Integer, primary_key=True)
     threadname = db.Column(db.String(80), unique=True)
     articles = db.relationship('Article', backref='thread', lazy=True)
