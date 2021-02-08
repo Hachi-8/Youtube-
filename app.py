@@ -32,7 +32,7 @@ def index():
         </form>
         </body></html>
     """
-
+app=app
 @app.route("/search")
 def search():
     name=request.args.get("name")
