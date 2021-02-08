@@ -4,7 +4,7 @@ from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
 from __init__ import create_app
 from thread import Article,Thread
-import app
+form __init__ import app
 
 #ルーティングの指定　---
 @app.route("/")
