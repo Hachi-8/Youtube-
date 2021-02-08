@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from __init__ import db
-
+from datetime import datetime
 class Thread(db.Model):
     #__tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)

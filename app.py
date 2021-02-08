@@ -1,6 +1,5 @@
 from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
-from datetime import datetime
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
 from __init__ import app
