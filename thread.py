@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from __init__ import db
+from app import db
 
 
 class Thread(db.Model):
