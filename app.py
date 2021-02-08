@@ -2,7 +2,7 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
-from Youtube_portal import app
+from __init__ import app
 from thread import Article,Thread
 
 
