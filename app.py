@@ -2,10 +2,10 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
-from __init__ import app
+from __init__ import create_app
 from thread import Article,Thread
 
-
+app=create_app()
 
 #ルーティングの指定　---
 @app.route("/")
