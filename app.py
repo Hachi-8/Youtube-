@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 from __init__ import create_app
 from thread import Article,Thread
 
-app = create_app()
 
 #ルーティングの指定　---
 @app.route("/")
