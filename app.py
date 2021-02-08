@@ -6,7 +6,7 @@ from __init__ import create_app
 from thread import Article,Thread
 
 app=create_app()
-
+db = SQLAlchemy(app)
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
