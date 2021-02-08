@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from app import db
+from app import app
 from datetime import datetime
+
+db = SQLAlchemy(app)
+
 class Thread(db.Model):
     #__tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)
