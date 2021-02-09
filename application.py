@@ -3,7 +3,8 @@ from werkzeug.utils import html
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
 #from __init__ import app
 #from model import Article,Thread,db  
 
@@ -11,6 +12,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'cfb33786023cc152019e747a051f73c6'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+#engine=create_engine("sqlite://{username}:{password}@localhost/test)
 db  = SQLAlchemy(app)
 db.create_all()
 
