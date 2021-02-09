@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from application import db
 
+db = SQLAlchemy()
 
 class Thread(db.Model):
     #__tablename__ = "threads"
