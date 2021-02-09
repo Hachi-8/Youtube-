@@ -2,13 +2,15 @@ from flask import Flask,request,redirect,render_template
 from werkzeug.utils import html
 from youtube_scraping import youtube_search,picking_title,picking_ids,video_info
 from flask_sqlalchemy import SQLAlchemy
-from model import Article,Thread,db
+
 #from __init__ import app
 
 
 app = Flask(__name__)
 app.config.from_object('config') 
-     
+
+from model import Article,Thread,db  
+   
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
