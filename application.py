@@ -16,17 +16,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db  = SQLAlchemy(app)
 db.create_all()
 
-
-class Thread(db.Model):
-    __tablename__ = "thread"
-    id = db.Column(db.Integer, primary_key=True)
-    threadname = db.Column(db.String(80), unique=True)
-    articles = db.relationship('Article', backref='thread', lazy=True)
-
-    def __init__(self, threadname, articles=[]):
-        self.threadname = threadname
-        self.articles = articles
-
 class Article(db.Model):
     __tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -41,6 +30,19 @@ class Article(db.Model):
         self.name = name
         self.article = article
         self.thread_id = thread_id
+        
+class Thread(db.Model):
+    __tablename__ = "threads"
+    id = db.Column(db.Integer, primary_key=True)
+    threadname = db.Column(db.String(80), unique=True)
+    articles = db.relationship('Article', backref='thread', lazy=True)
+
+    def __init__(self, threadname, articles=[]):
+        self.threadname = threadname
+        self.articles = articles
+
+
+
 
 
 #ルーティングの指定　---
