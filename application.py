@@ -16,6 +16,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 db  = SQLAlchemy(app)
 db.create_all()
 
+"""
 class Thread(db.Model):
     __tablename__ = "thread"
     id = db.Column(db.Integer, primary_key=True)
@@ -40,7 +41,7 @@ class Article(db.Model):
         self.name = name
         self.article = article
         self.thread_id = thread_id
-
+"""
 
 #ルーティングの指定　---
 @app.route("/")
