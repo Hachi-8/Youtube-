@@ -98,8 +98,7 @@ def search():
 
 @app.route("/thread", methods=["POST"])
 def thread():
-    form = cgi.FieldStorage()
-    title = form.getvalue('thread')
+    title = request.form['thread']
     thread_get = request.form['thread'] #request.form["value"]
     threads = Thread.query.all()
     #articles = Article.query.all()
