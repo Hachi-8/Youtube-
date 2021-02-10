@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
+import cgi
 #from __init__ import app
 #from model import Article,Thread,db  
 
@@ -75,7 +76,8 @@ def index():
 
 @app.route("/search")
 def search():
-    name=request.args.get("name")
+    
+    name= request.args.get("name")
     search_result=youtube_search(name)
     search_result_titles=picking_title(search_result)
     search_result_ids=picking_ids(search_result)
@@ -96,7 +98,8 @@ def search():
 
 @app.route("/thread", methods=["POST"])
 def thread():
-    title=request.form['thread']
+    form = cgi.FieldStorage()
+    title = form.getvalue('thread')
     thread_get = request.form['thread'] #request.form["value"]
     threads = Thread.query.all()
     #articles = Article.query.all()
