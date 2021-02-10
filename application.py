@@ -17,7 +17,7 @@ db  = SQLAlchemy(app)
 db.create_all()
 
 class Thread(db.Model):
-    __tablename__ = "threads"
+    #__tablename__ = "threads"
     id = db.Column(db.Integer, primary_key=True)
     threadname = db.Column(db.String(80), unique=True)
     articles = db.relationship('Article', backref='thread', lazy=True)
@@ -28,7 +28,7 @@ class Thread(db.Model):
 
 
 class Article(db.Model):
-    __tablename__ = "articles"
+    #__tablename__ = "articles"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     pub_date = db.Column(db.DateTime, nullable=False,
                                 default=datetime.utcnow())
