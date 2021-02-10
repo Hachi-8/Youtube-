@@ -96,8 +96,8 @@ def search():
 
 @app.route("/thread", methods=["POST"])
 def thread():
-    title=request.form['value']
-    thread_get = request.form['value'] #request.form["value"]
+    title=request.form['thread']
+    thread_get = request.form['thread'] #request.form["value"]
     threads = Thread.query.all()
     #articles = Article.query.all()
     thread_list = []
