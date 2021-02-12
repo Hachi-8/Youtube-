@@ -16,8 +16,9 @@
                     <a href="https://www.youtube.com/watch?v={{video['id']}}">動画へ</a> 
                 </div>
                 
-                <img class=thumbnail src="{{video['thumnail']}}" preserveAspectRatio="xMidYMid" >
-                <form action="/thread" method="POST">    
+                <img class=thumbnail src="{{video['thumbnail']}}" preserveAspectRatio="xMidYMid" >
+                <form action="/thread" method="POST"> 
+                    <input type="hidden" value="{{video['thumbnail']}}" name="thumbnail">   
                     <input type ="hidden" value="{{video['title']}}" name="thread">
                     <button type="submit">評判・コメント</button>
                 </form>

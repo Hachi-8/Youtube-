@@ -64,27 +64,15 @@ def video_info(video_ids):
         video_data = {
             "id" : result["id"],
             "url" : f'https://www.youtube.com/watch?v={ result["id"] }',
-            "thumnail" : result["snippet"]["thumbnails"]["high"]["url"],
+            "thumbnail" : result["snippet"]["thumbnails"]["high"]["url"],
             "duration" : result["contentDetails"]["duration"],
             "title" : result["snippet"]["title"]
         } 
         videos.append(video_data)
     return videos
 
-def picking_title(arg):
-    titles=[]
-    for item in arg["items"]:
-        titles.append(item["snippet"]["title"])
-    return titles
-
 def picking_viewcount(arg):
     viewcounts=[]
     for item in arg["statistics"]:
         viewcounts.append(item["viewcount"])
     return viewcounts
-
-def picking_ids(arg):
-    ids=[]
-    for item in arg["items"]:
-        ids.append(item["id"]["videoId"])
-    return ids
