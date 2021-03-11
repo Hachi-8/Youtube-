@@ -45,9 +45,6 @@ class Article(db.Model):
 
 
 
-
-
-
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
