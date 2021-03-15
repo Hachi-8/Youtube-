@@ -20,7 +20,7 @@
                 <form action="/thread" method="POST"> 
                     <input type="hidden" value="{{video['thumbnail']}}" name="thumbnail">   
                     <input type ="hidden" value="{{video['title']}}" name="thread">
-                    <input type="hidden" value="https://www.youtube.com/watch?v={{video['id']}}" name="url">
+                    <input type="hidden" value="https://www.youtube.com/embed/{{video['id']}}" name="url">
                     <button type="submit">評判・コメント</button>
                 </form>
             </div>
