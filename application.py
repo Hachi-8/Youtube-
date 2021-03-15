@@ -95,6 +95,7 @@ def search():
 
 @app.route("/thread", methods=["POST"])
 def thread():
+    url = request.form["url"]
     thumbnail = request.form['thumbnail']
     title = request.form['thread']
     thread_get = request.form['thread'] #request.form["value"]
@@ -113,7 +114,8 @@ def thread():
             articles=articles,
             thread=thread_get,
             title=title,
-            thumbnail = thumbnail
+            thumbnail = thumbnail,
+            url=url
         )
 
     else:
@@ -126,7 +128,8 @@ def thread():
             articles=articles,
             thread=thread_get,
             title=title,
-            thumbnail = thumbnail
+            thumbnail = thumbnail,
+            url=url
         )
 
 @app.route("/result", methods=["POST"])
