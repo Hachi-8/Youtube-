@@ -4,7 +4,10 @@
 {% block title %}
 <div class="threadtitle">
     <!--<img class="threadimg" src="{{thumbnail}}" alt="" preserveAspectRatio="xMidYMid">-->
-    <iframe class="iframe_video" width="16" height="9" src="{{url}}" frameborder="0"></iframe>
+    <div class="iframe"> 
+        <iframe class="iframe_video" width="640" height="360" src="{{url}}" frameborder="0"></iframe>
+    </div>
+    
     <p>{{title}}の評判</p>
 </div>
 {% endblock %}
