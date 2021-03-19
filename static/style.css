@@ -50,7 +50,7 @@ div.iframe{
 }
 div.iframe_video{
     width: 100%;
-    
+    position: relative;
 }
 div.threadtitle{
     width: 60%;
