@@ -50,7 +50,7 @@ div.movie_wrap{
     overflow: hidden;
 }
 
-div.iframe_video{
+div.movie_wrap iframe {
     width: 100%;
     position: absolute;
     top: 0;
