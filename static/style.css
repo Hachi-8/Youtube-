@@ -48,6 +48,10 @@ div.iframe{
     width: 100%;
 
 }
+div.iframe_video{
+    width: 100%;
+    
+}
 div.threadtitle{
     width: 60%;
     text-align: center;
