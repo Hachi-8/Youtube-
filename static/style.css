@@ -48,10 +48,21 @@ div.iframe{
     width: 100%;
 
 }
+div.movie_wrap{
+    position: relative;
+    padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
+    height: 0;
+    overflow: hidden;
+}
+
 div.iframe_video{
     width: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
 }
+
 div.threadtitle{
     width: 60%;
     text-align: center;
