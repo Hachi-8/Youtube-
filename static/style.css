@@ -43,11 +43,6 @@ div.threadimg{
     text-align: left;       
 }
 
-div.iframe{
-    position: relative;
-    width: 100%;
-
-}
 div.movie_wrap{
     position: relative;
     padding-bottom: 56.25%; /*アスペクト比 16:9の場合の縦幅*/
