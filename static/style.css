@@ -1,0 +1,57 @@
+body{
+    text-align: center;
+}
+
+div.search_word{
+    text-align: center;
+}
+
+div.content{
+    border: 1px dotted silver;
+    margin: 4px;
+    padding: 5px;
+    height:150px;
+    width: 450px;
+    float: left;
+}
+
+div.title{
+    height : 120px;
+    width: 240px;
+    float: left;
+    padding: 10px;
+
+}
+
+img.thumbnail{
+    height: 140px;
+    float: left;
+    margin: 1px,0;
+}
+
+form{
+    text-align: center;
+}
+
+input.searchword{
+    width: 24%;
+}
+
+div.threadimg{
+    float: left;  
+    height: 240px; 
+    text-align: left;       
+}
+
+div.iframe{
+    position: relative;
+    width: 100%;
+
+}
+div.threadtitle{
+    width: 60%;
+    text-align: center;
+    border: 1px dotted silver;
+    margin-right: auto;
+    margin-left: auto;
+}
