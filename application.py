@@ -48,28 +48,10 @@ class Article(db.Model):
 #ルーティングの指定　---
 @app.route("/")
 def index(): 
-    return """
-        <html>
-        <style>
-           form{
-                text-align: center;
-           } 
-           input.searchword{
-               width:24%;
-               height:25px;
-           }
-           input.searchbtn{
-               height:30px;
-           }
-        </style>
-        <body>
-        <form action = "/search" method ="GET">
-          <h1>Youtube Search</h1>
-          <input class="searchword" type ="text" name="name">
-          <input class="searchbtn" type ="submit" value="検索">
-        </form>
-        </body></html>
-    """
+    return render_template(
+        "home.html"
+    )
+    
 
 @app.route("/search")
 def search():

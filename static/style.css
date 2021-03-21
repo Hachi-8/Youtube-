@@ -35,6 +35,11 @@ form{
 
 input.searchword{
     width: 24%;
+    height:25px;
+}
+
+input.searchbtn{
+    height:30px;
 }
 
 div.threadimg{
