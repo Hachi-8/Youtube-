@@ -13,7 +13,7 @@ import cgi
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'cfb33786023cc152019e747a051f73c6'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///thread.db'
 #engine=create_engine("sqlite://{username}:{password}@localhost/test)
 db  = SQLAlchemy(app)
 db.create_all()
