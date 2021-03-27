@@ -6,6 +6,7 @@ from datetime import datetime
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 import cgi
+
 #from __init__ import app
 #from model import Article,Thread,db  
 
@@ -138,7 +139,25 @@ def result():
 #実行
 @app.route("/sitemap")
 def sitemap():
-    return render_template("sitemap.xml")
+    return """
+    <?xml version="1.0" encoding="UTF-8"?>
+
+-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<!-- created with free sitemap generation system www.sitemapxml.jp -->
+
+
+
+-<url>
+
+<loc>https://hachi88.pythonanywhere.com/</loc>
+
+<priority>1.0</priority>
+
+</url>
+
+</urlset>
+    """
 
 if __name__=="__main__":
     app.run()
