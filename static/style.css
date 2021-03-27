@@ -36,6 +36,7 @@ form{
 input.searchword{
     width: 24%;
     height:25px;
+    margin-bottom: 20px;
 }
 
 input.searchbtn{
@@ -69,5 +70,11 @@ div.threadtitle{
     border: 1px dotted silver;
     margin-right: auto;
     margin-left: auto;
-    margin: 20px , 0px;
+}
+
+div.article_wrap{
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
 }
