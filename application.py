@@ -142,13 +142,13 @@ def sitemap():
     return """
     <?xml version="1.0" encoding="UTF-8"?>
 
--<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <!-- created with free sitemap generation system www.sitemapxml.jp -->
 
 
 
--<url>
+<url>
 
 <loc>https://hachi88.pythonanywhere.com/</loc>
 
