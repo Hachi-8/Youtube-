@@ -88,3 +88,16 @@ def picking_ids(arg):
     for item in arg["items"]:
         ids.append(item["id"]["videoId"])
     return ids 
+
+def video_rating():
+    video_url = "https://www.googleapis.com/youtube/v3/videos/getRating"
+    YOUTUBE_API_KEY = 'AIzaSyBPme7scNi_jfFz5cK9rPoSrX68H5-2G5c'
+    YOUTUBE_API_SERVICE_NAME = 'youtube'
+    YOUTUBE_API_VERSION = 'v3'
+    
+    youtube = build(
+        YOUTUBE_API_SERVICE_NAME, 
+        YOUTUBE_API_VERSION, 
+        developerKey=YOUTUBE_API_KEY
+        )
+    
