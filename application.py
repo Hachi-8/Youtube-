@@ -137,7 +137,7 @@ def result():
 #<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
-@app.route("/sitemap")
+@app.route("/sitemap.xml")
 def sitemap():
     return """
     <?xml version="1.0" encoding="UTF-8"?>
