@@ -136,5 +136,9 @@ def result():
 #<button type="submit" value="{{video['id']}}">評判・コメント</button>
 #<input class="detailbtn" id="{{video[id]}}" type ="submit" value="評判・コメント">
 #実行
+@rout("/sitemap")
+def sitemap():
+    return render_template("sitemap.xml")
+    
 if __name__=="__main__":
     app.run()
